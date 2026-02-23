@@ -39,7 +39,7 @@ mod v0_5 {
     ///
     /// Since the newer trait is infallible, this simply creates a
     /// `try_fill_bytes` function that never returns an error.
-    impl<T: rand_core_0_10::RngCore> rand_core_0_5::RngCore for Rng010<T> {
+    impl<T: rand_core_0_10::Rng> rand_core_0_5::RngCore for Rng010<T> {
         fn next_u32(&mut self) -> u32 {
             self.0.next_u32()
         }
@@ -64,7 +64,7 @@ mod v0_5 {
     ///
     /// Since the older trait cannot express fallible RNGs perfectly, it'll
     /// panic on error if `next_u32`, `next_u64` or `fill_bytes` is called.
-    impl<T: rand_core_0_10::TryRng> rand_core_0_10::RngCore for TryRng010<T>
+    impl<T: rand_core_0_10::TryRng> rand_core_0_5::RngCore for TryRng010<T>
     where
         T::Error: Send + Sync + 'static,
     {
@@ -122,7 +122,7 @@ mod v0_6 {
     ///
     /// Since the newer trait is infallible, this simply creates a
     /// `try_fill_bytes` function that never returns an error.
-    impl<T: rand_core_0_10::RngCore> rand_core_0_6::RngCore for Rng010<T> {
+    impl<T: rand_core_0_10::Rng> rand_core_0_6::RngCore for Rng010<T> {
         fn next_u32(&mut self) -> u32 {
             self.0.next_u32()
         }

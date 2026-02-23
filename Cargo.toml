@@ -2,8 +2,8 @@
 name = "rand_core_compat"
 version = "0.1.0"
 authors = ["Tobias Bucher <tobiasbucher5991@gmail.com>"]
-edition = "2021"
-rust-version = "1.63"
+edition = "2024"
+rust-version = "1.85"
 description = "A compatibility layer for different versions of rand_core"
 repository = "https://github.com/tbu-/rand_core_compat"
 license = "MIT OR Apache-2.0"
